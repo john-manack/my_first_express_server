@@ -14,12 +14,11 @@ SERVER.listen(PORT, HOSTNAME, function () {
     console.log(`Server is running at http://${HOSTNAME}:${PORT}/`);
 });
 
-// the '/' below is known as the "root route" :D
-app.get('/', function (req, res) {
-    res.send('Hello from Express');
-});
+const rootController = require("./routes/index");
+const friendsController = require("./routes/friends");
 
-// "root route" should be written first, followed by all subsequent routes (eg. "/friends" below)
-app.get('/friends', function (req, res) {
-    res.send('This will be a friends list');
-});
+// Hey, Express... use the following functions if the user browses to the ROOT route
+
+//Hey, Web Dev Person, I'll use the Express ROuter here for this route
+app.use('/', rootController); // <-- Root route
+app.use('/friends', friendsController); // <-- /friends route
