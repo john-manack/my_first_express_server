@@ -1,4 +1,4 @@
-const friends = [
+module.exports = [
     {
         name: 'Finley',
         handle: '@fin',
