@@ -5,9 +5,9 @@ const express = require("express"),
 const friendsArray = require('../db')
 
 // When you're in a route file, the ROOT points to itself. That's why we use a '/' below instead of '/friends'.
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     let htmlData = `<ul>`;
-    friendsArray.map(function (friend) {
+    friendsArray.map((friend) => {
         htmlData += `<li>${friend.name}</li>`
     })
     htmlData += `</ul> `;
